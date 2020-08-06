@@ -1,0 +1,135 @@
+.modals {
+    .el-dialog__wrapper {
+        .el-dialog {
+            background: transparent;
+            .el-dialog__header {
+                .el-dialog__headerbtn {
+                    font-size: 0.26rem;
+                    z-index: 2;
+                    .el-icon {
+                        font-weight: bold;
+                        color: rgb(109, 176, 211);
+                    }
+                }
+            }
+
+            .el-dialog__body {
+                overflow-y: auto;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+            }
+
+            //第一种背景
+            &.modal--Bg1,
+            &.modal--Bg3 {
+                width: 4rem;
+                height: 3.02rem;
+
+                .modal-content__bg {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+
+            //第二种背景
+            &.modal--Bg2 {
+                width: 7.2rem;
+                height: 6.36rem;
+
+                // background: rgba(pink, 0.3);
+
+                .modal-content__bg {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.modal-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 0.14rem;
+}
+
+.modal-page {
+    $header_height: 0.5rem;
+    padding: 0.1rem;
+    height: 100%;
+    .modal-header {
+        position: relative;
+        i {
+            background-image: linear-gradient(to right, rgb(64, 217, 255), rgb(33, 154, 233));
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 0.24rem;
+            padding: 0 0.1rem 0 0.05rem;
+        }
+        .modal-title {
+            font-size: 0.2rem;
+            font-weight: bold;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            height: 0.03rem;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba(136, 210, 252, 0.8), rgba(136, 210, 252, 0));
+        }
+        height: $header_height;
+        line-height: $header_height;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-body {
+        height: calc(100% - #{$header_height});
+        overflow-y: auto;
+        padding: 0.1rem;
+    }
+}
+
+.keyvalue {
+    $label_width: 0.8rem;
+    $label_width_lg: 1rem;
+    font-size: 0.15rem;
+
+    &.label--lg {
+        .label {
+            width: $label_width_lg;
+        }
+        .value {
+            width: calc(100% - #{$label_width_lg});
+        }
+    }
+
+    .el-col {
+        display: flex;
+        margin-bottom: 0.1rem;
+    }
+    .label {
+        text-align: right;
+        color: rgb(166, 221, 255);
+        width: 0.8rem;
+    }
+    .value {
+        width: calc(100% - #{$label_width});
+        font-weight: bold;
+    }
+}
